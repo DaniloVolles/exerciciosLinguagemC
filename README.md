@@ -1,3 +1,5 @@
+![Imagem Ilustrativa](Algoritmos.png)
+
 # Para Executar
 
 Utilizei o GCC para compilar e rodar o programa em terminal (escrevi o código no VSCODE), mas você pode utilizar IDEs dedicadas para código em C sem problemas, como o **CLION**, **DEVC++** ou **Code::Blocks**, .
