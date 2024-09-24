@@ -49,6 +49,36 @@ void ex5(){ //Receba três notas de um aluno e calcule e mostre a média simples
     printf("A média entre as notas %.2f, %.2f e %.2f é %.2f.", n1, n2, n3, media);
 }
 
+void ex6(){ // receba três notas de um aluno e calcule e mostre a média ponderada, ou seja, a média final = nota1 * 3 + nota2 * 3 + nota3 * 4
+    // tá meio errada a implementação de média ponderada no comando do exercício, mas para resolvê-lo, basta 
+    // calcular a média como no exercício 5, lembrando-se de multiplicar cada nota pelo peso e dividir pela soma dos pesos
+    // Os pesos foram definidos no comando da questão -> 3, 3 e 4
+
+    printf("EXERCICIO 6\n");
+
+    float n1, n2, n3, media;
+
+    //n1
+    printf("Digite a nota da primeira avaliação: ");
+    scanf("%f", &n1);
+
+    //n2
+    printf("Digite a nota da segunda avaliação: ");
+    scanf("%f", &n2);
+
+    //n3
+    printf("Digite a nota da terceira avaliação: ");
+    scanf("%f", &n3);
+
+    media = (n1*3 + n2*3 + n3*4) / 10;
+
+    printf("A média entre as notas %.2f, %.2f e %.2f é %.2f.", n1, n2, n3, media);
+}
+
+void naoImplementado(){
+    printf("Exercício não implementado ou não existe");
+}
+
 
 int main(){
     // Header
@@ -56,10 +86,43 @@ int main(){
     printf("\n============ PROGRAMA EM EXECUÇÃO =============");
     printf("\n===============================================\n\n");
 
-    // Exercicios
-    ex3();
-    ex4();
-    ex5();
+    int exercicio = 0;
+    int opcao = 0;
+
+    printf("Digite o exercício a ser executado (99 para sair): ");
+    scanf("%d", &exercicio);
+
+        switch (exercicio)
+        {
+        case 1:
+            naoImplementado();
+            break;
+
+        case 2:
+            naoImplementado();
+            break;
+
+        case 3:
+            ex3();
+            break;
+        
+        case 4: 
+            ex4();
+            break;
+
+        case 5:
+            ex5();
+            break;
+
+        case 6:
+            ex6();
+            break;
+                
+        default:
+            naoImplementado();
+            break;
+        }
+
     
     // Footer
     printf("\n\n===============================================");
