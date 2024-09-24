@@ -81,6 +81,8 @@ void ex6(){ // receba três notas de um aluno e calcule e mostre a média ponder
 void ex9(){ //receba o salário de um funcionário, calcule e mostre o salário a receber, sabendo-se
     // que é composto do salário base, mais uma gratificação de 15% sobre o salário e débito de 7% de imposto.
 
+    printf("\nEXERCICIO 9\n");
+
     float salarioBase, gratificacao, imposto, salarioFinal;
 
     printf("Digite o salário base do funcionário: ");
@@ -101,10 +103,31 @@ void ex9(){ //receba o salário de um funcionário, calcule e mostre o salário 
     printf("Salario final: %.2f \n", salarioFinal);
 }
 
+void ex10(){ //  receba o valor que foi investido, em reais, e ajude um invetidor a calcular seu 
+    // lucro no final do mês, sabe-se que o invesmento foi feito em renda fixa com ganho de juros de 
+    // 1% ao mês. Ao final, mostre o valor dos juros e o valor atualizado do investimento.
+
+    printf("\nEXERCICIO 10\n");
+
+    float valorInvestido, JUROS, valorJuros, investimentoAtualizado;
+
+    JUROS = 0.01;
+
+    printf("Informe o valor investido: ");
+    scanf("%f", &valorInvestido);
+
+    valorJuros = valorInvestido*JUROS;
+    investimentoAtualizado = valorInvestido + valorJuros;
+
+    printf("Valores:\n");
+    printf("Valor Investido: R$ %.2f \n", valorInvestido);
+    printf("Juros: R$ %.2f \n", valorJuros);
+    printf("Investimento Atualizado: R$ %.2f \n", investimentoAtualizado);
+}
+
 void naoImplementado(){
     printf("Exercício não implementado ou não existe");
 }
-
 
 int main(){
     // Header
@@ -113,57 +136,22 @@ int main(){
     printf("\n===============================================\n\n");
 
     int exercicio = 0;
-    int opcao = 0;
 
     printf("Digite o exercício a ser executado: ");
     scanf("%d", &exercicio);
 
-        switch (exercicio)
-        {
-        case 1:
-            naoImplementado();
-            break;
-
-        case 2:
-            naoImplementado();
-            break;
-
-        case 3:
-            ex3();
-            break;
-        
-        case 4: 
-            ex4();
-            break;
-
-        case 5:
-            ex5();
-            break;
-
-        case 6:
-            ex6();
-            break;
-
-        case 7:
-            naoImplementado();
-            break;
-
-        case 8:
-            naoImplementado();
-            break;
-
-        case 9: 
-            ex9();
-            break;
-                
-        default:
-            naoImplementado();
-            break;
-        }
-
+    switch (exercicio) {
+    case 3: ex3(); break;
+    case 4: ex4(); break;
+    case 5: ex5(); break;
+    case 6: ex6(); break;
+    case 9: ex9(); break;
+    case 10: ex10(); break;
+    default: naoImplementado(); break;
+    }
     
     // Footer
-    printf("\n\n===============================================");
+    printf("\n===============================================");
     printf("\n=========== PROGRAMA EM FINALIZAÇÃO ===========");
     printf("\n===============================================\n");
     return 0;
