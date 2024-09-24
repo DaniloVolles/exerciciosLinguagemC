@@ -49,10 +49,13 @@ void ex5(){ //Receba três notas de um aluno e calcule e mostre a média simples
     printf("A média entre as notas %.2f, %.2f e %.2f é %.2f.", n1, n2, n3, media);
 }
 
-void ex6(){ // receba três notas de um aluno e calcule e mostre a média ponderada, ou seja, a média final = nota1 * 3 + nota2 * 3 + nota3 * 4
-    // tá meio errada a implementação de média ponderada no comando do exercício, mas para resolvê-lo, basta 
+void ex6(){ // receba três notas de um aluno e calcule e mostre a média ponderada, ou seja, 
+    // a média final = nota1 * 3 + nota2 * 3 + nota3 * 4
+
+    /* tá meio errada a implementação de média ponderada no comando do exercício, mas para resolvê-lo, basta 
     // calcular a média como no exercício 5, lembrando-se de multiplicar cada nota pelo peso e dividir pela soma dos pesos
     // Os pesos foram definidos no comando da questão -> 3, 3 e 4
+    */
 
     printf("EXERCICIO 6\n");
 
@@ -75,6 +78,29 @@ void ex6(){ // receba três notas de um aluno e calcule e mostre a média ponder
     printf("A média entre as notas %.2f, %.2f e %.2f é %.2f.", n1, n2, n3, media);
 }
 
+void ex9(){ //receba o salário de um funcionário, calcule e mostre o salário a receber, sabendo-se
+    // que é composto do salário base, mais uma gratificação de 15% sobre o salário e débito de 7% de imposto.
+
+    float salarioBase, gratificacao, imposto, salarioFinal;
+
+    printf("Digite o salário base do funcionário: ");
+    scanf("%f", &salarioBase);
+
+    gratificacao = salarioBase*0.15;
+    imposto = salarioBase*0.07;
+
+    salarioFinal = salarioBase + gratificacao - imposto;
+
+    // Dá pra fazer diretão:
+    // salarioFinal = salarioBase*1.15 - salarioBase*0.07;
+
+    printf("O funcionário irá receber os seguintes valores ao final do mês: \n");
+    printf("Salário Base: %.2f \n", salarioBase);
+    printf("Gratificação: %.2f \n", gratificacao);
+    printf("Imposto: %.2f \n", imposto);
+    printf("Salario final: %.2f \n", salarioFinal);
+}
+
 void naoImplementado(){
     printf("Exercício não implementado ou não existe");
 }
@@ -89,7 +115,7 @@ int main(){
     int exercicio = 0;
     int opcao = 0;
 
-    printf("Digite o exercício a ser executado (99 para sair): ");
+    printf("Digite o exercício a ser executado: ");
     scanf("%d", &exercicio);
 
         switch (exercicio)
@@ -116,6 +142,18 @@ int main(){
 
         case 6:
             ex6();
+            break;
+
+        case 7:
+            naoImplementado();
+            break;
+
+        case 8:
+            naoImplementado();
+            break;
+
+        case 9: 
+            ex9();
             break;
                 
         default:
