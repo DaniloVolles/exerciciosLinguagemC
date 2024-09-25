@@ -125,6 +125,61 @@ void ex10(){ //  receba o valor que foi investido, em reais, e ajude um invetido
     printf("Investimento Atualizado: R$ %.2f \n", investimentoAtualizado);
 }
 
+void ex11(){ // receba o valor do raio e calcule a área de um círculo
+    
+    printf("\nEXERCICIO 11\n");
+
+    float raio, area, PI;
+    PI = 3.14159265;
+
+    printf("Digite o tamanho em cm do raio do círculo: ");
+    scanf("%f", &raio);
+
+    area = PI*raio*raio;
+
+    printf("A área do círculo que tem %.2f cm de raio é %.3f cm².", raio, area);
+}
+
+void ex12(){ // ajude um trabalhador a calcular o saldo de sua conta. O trabalhador deverá 
+// informar o valor do seu salário e de dois cheques que foram descontados em sua conta bancária.
+// Sabe-se que a cada operação bancária de retiada de dinheiro com cheque, paga-se um imposto de
+// 0,02% do valor do cheque. Faça os cálculos e mostre: o saldo inicial, os valores dos cheques 
+// com os respetivos impostos, e o saldo atual, após os descontos realizados.
+
+    printf("\nEXERCICIO 12\n");
+
+    float salario, cheque1, cheque2, IMPOSTO, saldoAposDescontos;
+    IMPOSTO = 0.0002;
+
+    // Salário
+    printf("Informe o valor do seu salário: ");
+    scanf("%f", &salario);
+
+    // Cheque 1
+    printf("Informe o valor do primeiro cheque: ");
+    scanf("%f", &cheque1);
+
+    // Cheque 2
+    printf("Informe o valor do segundo cheque: ");
+    scanf("%f", &cheque2);
+
+    // Respostas
+    printf("Salário: %.2f\n", salario);
+    printf("Cheque 1: %.2f\n", cheque1);
+    printf("Cheque 2: %.2f\n", cheque2);
+
+    cheque1 *= (IMPOSTO + 1); // Estrutura otimizada para usar apenas 
+    cheque2 *= (IMPOSTO + 1); // uma variável para cada cheque
+    
+    printf("Valor final do Cheque 1: %.2f\n", cheque1);
+    printf("Valor final do Cheque 2: %.2f\n", cheque2);
+
+    saldoAposDescontos = salario - cheque1 - cheque2;
+
+    printf("Saldo Final: %.2f\n", saldoAposDescontos);
+
+}
+
 void naoImplementado(){
     printf("Exercício não implementado ou não existe");
 }
@@ -147,6 +202,8 @@ int main(){
     case 6: ex6(); break;
     case 9: ex9(); break;
     case 10: ex10(); break;
+    case 11: ex11(); break;
+    case 12: ex12(); break;
     default: naoImplementado(); break;
     }
     
