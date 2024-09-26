@@ -180,6 +180,64 @@ void ex12(){ // ajude um trabalhador a calcular o saldo de sua conta. O trabalha
 
 }
 
+void ex15(){ // receba dois números e mostre o menor
+    int a, b;
+
+    printf("Insira o primeiro número: ");
+    scanf("%d", &a);
+
+    printf("Insira o segundo número: ");
+    scanf("%d", &b);
+
+    if (a > b) {
+        printf("O número %d é o menor em relação à %d.", b, a);
+    } else if (b > a) {
+        printf("O número %d é o menor em relação à %d.", a, b);
+    } else {
+        printf("Os números são iguais.");
+    }
+    
+}
+
+void ex18(){ // receba tres números e mostre-os em ordem decrescente
+    int a, b, c;
+
+    printf("a: "); scanf("%d", &a);
+
+    printf("b: "); scanf("%d", &b);
+
+    printf("c: "); scanf("%d", &c);
+
+    if (a > b && a > c) {
+        // a > resto
+        if (b > c) {
+            // a > b > c
+            printf("%d, %d, %d", a, b, c);
+        } else if (c > b) {
+            // a > c > b
+            printf("%d, %d, %d", a, c, b);
+        }
+    } else if (b > c && b > a) {
+        // b > resto
+        if (a > c) {
+            // b > a > c
+            printf("%d, %d, %d", b, a, c);
+        } else if (c > a) {
+            // b > c > a
+            printf("%d, %d, %d", b, c, a);
+        }
+    } else {
+        // c > resto
+        if (a > b) {
+            // c > a > b
+            printf("%d, %d, %d", c, a, b);
+        } else if (b > a) {
+            // c > b > a
+            printf("%d, %d, %d", c, b, a);
+        }
+    }
+}
+
 void naoImplementado(){
     printf("Exercício não implementado ou não existe");
 }
@@ -204,6 +262,8 @@ int main(){
     case 10: ex10(); break;
     case 11: ex11(); break;
     case 12: ex12(); break;
+    case 15: ex15(); break;
+    case 18: ex18(); break;
     default: naoImplementado(); break;
     }
     
